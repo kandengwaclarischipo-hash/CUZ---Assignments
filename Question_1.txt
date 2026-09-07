@@ -1,0 +1,10 @@
+	
+
+(i)	Bug 1 	
+	In Python, when a variable is assigned a value anywhere within a function's scope, this is treats it as a local variable for that entire scope.
+	In this case, calls is assigned in the wrapper so it is considered as a local variable. When the right hand side tries to access this local 
+	variable before assignment it causes UnboundLocalError 
+
+(ii)	Bug 2
+	Rate-limit state needs to be maintained separately for different decorated class instances. Use a dictionary such as calls_by_instance keyed
+	by the instance, and protect access with threading.Lock for thread safety.
